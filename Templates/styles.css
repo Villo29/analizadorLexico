@@ -1,0 +1,80 @@
+
+#body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000000;
+}
+
+#titulio {
+    font-size: 3.25rem;
+    font-weight: bold;
+    color: #b9b424aa;
+    text-align: center;
+    margin-top: 3;
+}
+
+button {
+    color: #fdfdfd;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 2rem;
+    background-color: #b9b424aa;
+    height: 6rem;
+    width: 15rem;
+}
+
+p {
+    color: #b9b424aa;
+    font-size: 2.25rem;
+}
+
+textarea {
+    font-size: 1.25rem;
+    border-radius: 2rem;
+    padding: 1rem;
+    width: 70vw;
+    height: 30vh;
+    margin: 1rem;
+    color: rgb(77, 77, 77);
+}
+
+#subirArchivo {
+    text-align: center;
+    color: #b9b424aa;
+    border-radius: 1rem;
+    background-color: #000000;
+
+}
+
+#section1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+input[type="file"] {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    font-size: 1.7rem;
+}
+
+.fila {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.fila>div {
+    background-color: white;
+    padding: 1.25rem;
+    width: 60vw;
+    height: 100%;
+    margin: 0.625rem;
+    font-size: 1.7rem;
+    box-sizing: border-box;
+}
