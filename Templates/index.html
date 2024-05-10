@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body class="body">
+    <style>
+        .body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #000000;
+        }
+
+        .titulio {
+            font-size: 3.25rem;
+            font-weight: bold;
+            color: #b9b424aa;
+            text-align: center;
+            margin-top: 3;
+        }
+
+        button {
+            color: #fdfdfd;
+            text-align: center;
+            font-size: 1.5rem;
+            border-radius: 2rem;
+            background-color: #b9b424aa;
+            height: 6rem;
+            width: 15rem;
+        }
+
+        p {
+            color: #b9b424aa;
+            font-size: 2.25rem;
+        }
+
+        textarea {
+            font-size: 1.25rem;
+            border-radius: 2rem;
+            padding: 1rem;
+            width: 70vw;
+            height: 30vh;
+            margin: 1rem;
+            color: rgb(77, 77, 77);
+        }
+
+        .subirArchivo {
+            text-align: center;
+            color: #b9b424aa;
+            border-radius: 1rem;
+            background-color: #000000;
+
+        }
+
+        #section1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        input[type="file"] {
+            margin-top: 4rem;
+            margin-bottom: 4rem;
+            font-size: 1.7rem;
+        }
+
+        .fila {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fila>div {
+            background-color: white;
+            padding: 1.25rem;
+            width: 60vw;
+            height: 100%;
+            margin: 0.625rem;
+            font-size: 1.7rem;
+            box-sizing: border-box;
+        }
+    </style>
+    <header>
+        <h1 class="titulio">Ánalizador de Texto</h1>
+    </header>
+    <main>
+        <section id="section1">
+            <form method="POST" enctype="multipart/form-data">
+                <div>
+                    <input class="subirArchivo" type="file" id="file" name="file" accept=".txt">
+                </div>
+                <button type="submit">Subir y Ánalizar</button>
+                <p>Inserta el código para analizar</p>
+                </center>
+            </form>
+            <form method="POST" enctype="multipart/form-data">
+                <textarea name="code" placeholder="Inserte Aquí"></textarea>
+                <div>
+                    <button type="submit">Analizar Código</button>
+                    </center>
+                </div>
+            </form>
+        </section>
+        <div class="fila">
+            <div>
+                {% for token in tokens %}
+                <p>{{ token.type }}</p>
+                {% endfor %}
+            </div>
+            <div>
+                {% for token in tokens %}
+                <p>Linea {{ token.line }} <br> {{ token.description }} : {{ token.value }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+</body>
+</html>
